@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {  // Function declaration
     const form = document.getElementById('registration-form');
     const feedbackDiv = document.getElementById('form-feedback');
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', function(event) { // Anonymous function expression
         event.preventDefault();
 
         const username = document.getElementById('username').value.trim();
@@ -31,13 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isValid) {
             feedbackDiv.textContent = "Registration successful!";
-            feedbackDiv.style.color = "#28a745"; // Green for success
-            feedbackDiv.style.backgroundColor = "#d4edda"; // Light green for success
+            feedbackDiv.style.color = "#28a745";
+            feedbackDiv.style.backgroundColor = "#d4edda";
         } else {
             feedbackDiv.innerHTML = messages.join("<br>");
-            feedbackDiv.style.color = "#dc3545"; // Red for error
-            feedbackDiv.style.backgroundColor = "#f8d7da"; // Light red for error
-
+            feedbackDiv.style.color = "#dc3545";
+            feedbackDiv.style.backgroundColor = "#f8d7da";
         }
     });
 });
